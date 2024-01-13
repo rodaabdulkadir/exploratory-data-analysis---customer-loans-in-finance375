@@ -1,5 +1,6 @@
 import pymysql
-import yaml
+import pandas as pd
+from sqlalchemy import create_engine
 
 class RDSDatabaseConnector:
     def __init__(self, credentials):
@@ -9,6 +10,7 @@ class RDSDatabaseConnector:
         self.database = credentials.get('RDS_DATABASE')
         self.port = credentials.get('RDS_PORT')
         self.connection = None
+        self.engine = None
 
     def connect(self):
         try:
@@ -20,6 +22,7 @@ class RDSDatabaseConnector:
                 port=self.port
             )
             print("Connected to the database")
+            self.create_engine()
         except Exception as e:
             print(f"Error: Unable to connect to the database - {str(e)}")
 
@@ -30,6 +33,32 @@ class RDSDatabaseConnector:
                 print("Disconnected from the database")
         except Exception as e:
             print(f"Error: Unable to disconnect from the database - {str(e)}")
+
+    def create_engine(self):
+        try:
+            self.engine = create_engine(
+                f"mysql+pymysql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
+            )
+            print("SQLAlchemy Engine created")
+        except Exception as e:
+            print(f"Error: Unable to create SQLAlchemy Engine - {str(e)}")
+
+    def execute_query(self, query):
+        try:
+            if self.engine:
+                result = pd.read_sql_query(query, self.engine)
+                return result
+            else:
+                print("Error: SQLAlchemy Engine not initialized. Call connect() method first.")
+                return None
+        except Exception as e:
+            print(f"Error executing query - {str(e)}")
+            return None
+
+    def extract_data_as_dataframe(self):
+        # Assuming 'loan_payments' is the name of the table
+        query = "SELECT * FROM loan_payments"
+        return self.execute_query(query)
 
 # Example usage:
 credentials = {
@@ -42,8 +71,13 @@ credentials = {
 
 rds_connector = RDSDatabaseConnector(credentials)
 rds_connector.connect()
-# Perform operations like fetching data or other tasks
-# rds_connector.disconnect()
 
-# rds_connector.disconnect()
+# Extract data from the 'loan_payments' table as a Pandas DataFrame
+loan_payments_data = rds_connector.extract_data_as_dataframe()
+print(loan_payments_data)
+
+# Perform other operations as needed
+
+rds_connector.disconnect()
+
 
