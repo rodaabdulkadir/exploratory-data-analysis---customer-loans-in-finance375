@@ -1,15 +1,6 @@
 import pymysql
 import yaml
 
-def load_credentials(file_path='credentials.yaml'):
-    try:
-        with open(file_path, 'r') as file:
-            credentials = yaml.safe_load(file)
-            return credentials
-    except Exception as e:
-        print(f"Error: Unable to load credentials from {file_path} - {str(e)}")
-        return None
-
 class RDSDatabaseConnector:
     def __init__(self, credentials):
         self.host = credentials.get('RDS_HOST')
@@ -41,9 +32,18 @@ class RDSDatabaseConnector:
             print(f"Error: Unable to disconnect from the database - {str(e)}")
 
 # Example usage:
-# credentials = load_credentials()
-# rds_connector = RDSDatabaseConnector(credentials)
-# rds_connector.connect()
-# # Perform operations like fetching data or other tasks
+credentials = {
+    'RDS_HOST': 'eda-projects.cq2e8zno855e.eu-west-1.rds.amazonaws.com',
+    'RDS_USER': 'loansanalyst',
+    'RDS_PASSWORD': 'EDALoananalyst',
+    'RDS_DATABASE': 'payments',
+    'RDS_PORT': 5432
+}
+
+rds_connector = RDSDatabaseConnector(credentials)
+rds_connector.connect()
+# Perform operations like fetching data or other tasks
+# rds_connector.disconnect()
+
 # rds_connector.disconnect()
 
