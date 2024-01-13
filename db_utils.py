@@ -67,6 +67,17 @@ class RDSDatabaseConnector:
         except Exception as e:
             print(f"Error saving data to CSV - {str(e)}")
 
+    def load_data_to_dataframe(self, file_path='loan_payments_data.csv'):
+        try:
+            data = pd.read_csv(file_path)
+            print(f"Data loaded from {file_path}. Shape: {data.shape}")
+            print("Sample of the data:")
+            print(data.head())
+            return data
+        except Exception as e:
+            print(f"Error loading data from CSV - {str(e)}")
+            return None
+
 # Example usage:
 credentials = {
     'RDS_HOST': 'eda-projects.cq2e8zno855e.eu-west-1.rds.amazonaws.com',
@@ -79,11 +90,12 @@ credentials = {
 rds_connector = RDSDatabaseConnector(credentials)
 rds_connector.connect()
 
-# Extract data from the 'loan_payments' table as a Pandas DataFrame
-loan_payments_data = rds_connector.extract_data_as_dataframe()
-
 # Save data to a CSV file
+loan_payments_data = rds_connector.extract_data_as_dataframe()
 rds_connector.save_data_to_csv(loan_payments_data)
+
+# Load data from the CSV file into a Pandas DataFrame
+loaded_data = rds_connector.load_data_to_dataframe()
 
 # Perform other operations as needed
 
