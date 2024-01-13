@@ -60,6 +60,13 @@ class RDSDatabaseConnector:
         query = "SELECT * FROM loan_payments"
         return self.execute_query(query)
 
+    def save_data_to_csv(self, data, file_path='loan_payments_data.csv'):
+        try:
+            data.to_csv(file_path, index=False)
+            print(f"Data saved to {file_path}")
+        except Exception as e:
+            print(f"Error saving data to CSV - {str(e)}")
+
 # Example usage:
 credentials = {
     'RDS_HOST': 'eda-projects.cq2e8zno855e.eu-west-1.rds.amazonaws.com',
@@ -74,10 +81,13 @@ rds_connector.connect()
 
 # Extract data from the 'loan_payments' table as a Pandas DataFrame
 loan_payments_data = rds_connector.extract_data_as_dataframe()
-print(loan_payments_data)
+
+# Save data to a CSV file
+rds_connector.save_data_to_csv(loan_payments_data)
 
 # Perform other operations as needed
 
 rds_connector.disconnect()
+
 
 
