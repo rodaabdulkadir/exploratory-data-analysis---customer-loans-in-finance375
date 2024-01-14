@@ -45,49 +45,30 @@ exploratory-data-analysis---customer-loans-in-finance375/
 
 │
 
-├── .gitignore
-
-├── Additional analysis.ipynb
-
-├── README.md
-
-├── correlation_analysis.py
-
-├── credentials.yaml
-
-├── data_frame_info.py
-
-├── data_frame_transform.py
-
-├── data_transform.py
-
-├── db_utils.py
-
-├── loan_indicators_analysis.py
-
-├── payment_analysis.py
-
-├── plotter.py
-
-├── loan_payments_data.csv
-
-└── requirements.txt
-
-AICOREproject/
-
-|-- .gitignore
+|--  .gitignore
 
 |-- Additional analysis.ipynb
 
 |-- README.md
-|-- credentials.yaml
-|-- data_frame_info.py
-|-- data_frame_transform
-|-- data_transform.py
-|-- db_utils.py
-|-- loan_indicators_analysis.py
-|-- payment_analysis.py
-|-- correlation_analysis.py
-|-- plotter.py
-|-- your_dataset.csv
 
+|-- correlation_analysis.py
+
+|--  credentials.yaml
+
+|--  data_frame_info.py
+
+|--  data_frame_transform.py
+
+|--  data_transform.py
+
+|--  db_utils.py
+
+|--  loan_indicators_analysis.py
+
+|--  payment_analysis.py
+
+|--  plotter.py
+
+|--  loan_payments_data.csv
+
+└--  requirements.txt
