@@ -22,7 +22,7 @@ Throughout the project, various Python scripts have been developed to perform da
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/rodaabdulkadir/exploratory-data-analysis---customer-loans-in-finance375.git
+   git clone https://github.com/rodaabdulkadir/exploratory-data-analysis---customer-loans-in-finance375.git 
    cd exploratory-data-analysis---customer-loans-in-finance375
 
 ## Usage
@@ -71,4 +71,4 @@ exploratory-data-analysis---customer-loans-in-finance375/
 
 |--  loan_payments_data.csv
 
-└--  requirements.txt
+|--  requirements.txt
