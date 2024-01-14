@@ -68,10 +68,10 @@ exploratory-data-analysis---customer-loans-in-finance375/
 
 |--  loan_indicators_analysis.py
 
+|--  loan_payments_data.csv
+
 |--  payment_analysis.py
 
 |--  plotter.py
-
-|--  loan_payments_data.csv
 
 |--  requirements.txt
