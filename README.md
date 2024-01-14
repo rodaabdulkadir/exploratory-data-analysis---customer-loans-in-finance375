@@ -22,6 +22,37 @@ Throughout the project, various Python scripts have been developed to perform da
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/your-repository.git
-   cd your-repository
+   git clone https://github.com/rodaabdulkadir/exploratory-data-analysis---customer-loans-in-finance375.git
+   cd exploratory-data-analysis---customer-loans-in-finance375
 
+## Usage
+
+1.Execute the Jupyter Notebooks or Python scripts for specific analyses:
+
+- data_frame_info.py: Display information about the DataFrame.
+- data_frame_transform.py: Data preprocessing and transformation.
+- correlation_analysis.py: Identify and remove highly correlated columns.
+- loan_indicators_analysis.py: Analyze indicators affecting loan repayment.
+- payment_analysis.py: Analyze loan payments, recovery percentages, and potential losses.
+- plotter.py: Utility for visualization.
+  
+2.Follow the instructions within each script for additional configurations and analysis steps.
+
+## File Structure
+
+
+project-root/
+│
+├── .gitignore
+├── Additional analysis.ipynb
+├── README.md
+├── credentials.yaml
+├── data_frame_info.py
+├── data_frame_transform.py
+├── data_transform.py
+├── db_utils.py
+├── loan_indicators_analysis.py
+├── payment_analysis.py
+├── plotter.py
+├── loan_payments_data.csv
+└── requirements.txt
