@@ -9,14 +9,14 @@
 
 ## Description
 
-This project focuses on analyzing loan payment data to derive insights into customer payment behavior and potential risks. The project includes data preprocessing, exploratory data analysis, and visualization of key indicators related to loan status, recovery percentages, and potential losses.
+This project focuses on analysing loan payment data to derive insights into customer payment behaviour and potential risks. The project includes data preprocessing, exploratory data analysis, and visualisation of key indicators related to loan status, recovery percentages, and potential losses.
 
 The main goals of the project are:
-- Identify indicators that may suggest a customer is unable to pay the loan.
-- Analyze loan grades, purposes, and home ownership as potential factors affecting loan repayment.
-- Visualize and understand the distribution of loan statuses and recovery percentages.
+1.Identify indicators that may suggest a customer is unable to pay the loan.
+2.Analyse loan grades, purposes, and home ownership as potential factors affecting loan repayment.
+3.Visualise and understand the distribution of loan statuses and recovery percentages.
 
-Throughout the project, various Python scripts have been developed to perform data transformation, correlation analysis, and payments analysis.
+Throughout the project, various Python scripts have been developed to perform data transformation, correlation analysis, and payments analysis. These scripts assist in uncovering patterns, trends, and potential risks within the loan payment dataset, aiding in informed decision-making for the lending institution.
 
 ## Installation
 
