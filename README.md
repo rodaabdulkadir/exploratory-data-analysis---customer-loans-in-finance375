@@ -21,6 +21,11 @@ The main goals of the project are:
 
 Throughout the project, various Python scripts have been developed to perform data transformation, correlation analysis, and payments analysis. These scripts assist in uncovering patterns, trends, and potential risks within the loan payment dataset, aiding in informed decision-making for the lending institution.
 
+The project presented several challenges, particularly in the tasks of removing outliers and cleaning the data. Handling outliers required careful consideration, as it involved balancing the removal of extreme values without losing valuable information. The data cleaning process was also intricate, demanding a systematic approach to ensure accurate and reliable analyses.
+
+Despite the challenges, these tasks provided a valuable learning experience. The intricacies of data cleaning and outlier removal deepened my understanding of data quality and the importance of thorough preprocessing for robust analyses. This experience enhances my proficiency in handling real-world datasets and extracting meaningful insights from complex financial data.
+
+
 ## Installation
 
 1. Clone the repository:
