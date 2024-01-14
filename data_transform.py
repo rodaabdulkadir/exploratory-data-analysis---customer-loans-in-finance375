@@ -1,27 +1,27 @@
+# data_transform.py
 import pandas as pd
 
 class DataTransform:
     @staticmethod
-    def convert_dates(df, date_columns):
-        for col in date_columns:
-            df[col] = pd.to_datetime(df[col], errors='coerce')
+    def convert_to_numeric(df, columns):
+        """Convert specified columns to numeric format."""
+        df[columns] = df[columns].apply(pd.to_numeric, errors='coerce')
         return df
 
     @staticmethod
-    def convert_to_numeric(df, numeric_columns):
-        for col in numeric_columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
+    def convert_to_datetime(df, columns):
+        """Convert specified columns to datetime format."""
+        df[columns] = df[columns].apply(pd.to_datetime, errors='coerce')
         return df
 
     @staticmethod
-    def convert_to_categorical(df, categorical_columns):
-        for col in categorical_columns:
-            df[col] = df[col].astype('category')
+    def convert_to_categorical(df, columns):
+        """Convert specified columns to categorical format."""
+        df[columns] = df[columns].astype('category')
         return df
 
     @staticmethod
-    def remove_excess_symbols(df, numeric_columns):
-        for col in numeric_columns:
-            if pd.api.types.is_numeric_dtype(df[col]):
-                df[col] = df[col].replace('[\$,]', '', regex=True).astype(float)
+    def remove_special_characters(df, columns):
+        """Remove special characters from specified columns."""
+        df[columns] = df[columns].replace('[^a-zA-Z0-9]', '', regex=True)
         return df
