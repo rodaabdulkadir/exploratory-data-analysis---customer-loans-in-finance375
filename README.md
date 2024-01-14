@@ -74,8 +74,11 @@ exploratory-data-analysis---customer-loans-in-finance375/
 └── requirements.txt
 
 AICOREproject/
+
 |-- .gitignore
+
 |-- Additional analysis.ipynb
+
 |-- README.md
 |-- credentials.yaml
 |-- data_frame_info.py
