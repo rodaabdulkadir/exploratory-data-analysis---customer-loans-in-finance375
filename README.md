@@ -41,7 +41,7 @@ Throughout the project, various Python scripts have been developed to perform da
 ## File Structure
 
 
-project-root/
+exploratory-data-analysis---customer-loans-in-finance375/
 
 │
 
@@ -72,3 +72,19 @@ project-root/
 ├── loan_payments_data.csv
 
 └── requirements.txt
+
+AICOREproject/
+|-- .gitignore
+|-- Additional analysis.ipynb
+|-- README.md
+|-- credentials.yaml
+|-- data_frame_info.py
+|-- data_frame_transform
+|-- data_transform.py
+|-- db_utils.py
+|-- loan_indicators_analysis.py
+|-- payment_analysis.py
+|-- correlation_analysis.py
+|-- plotter.py
+|-- your_dataset.csv
+
